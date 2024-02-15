@@ -432,8 +432,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/random-strided-t.svg
 [npm-url]: https://npmjs.org/package/@stdlib/random-strided-t
 
-[test-image]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/random-strided-t/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/random-strided-t?branch=main
