@@ -35,25 +35,32 @@ limitations under the License.
 
 > Fill a strided array with pseudorandom numbers drawn from a [Student's t][@stdlib/random/base/t]-distribution.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-strided-t
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/random-strided-t/tags). For example,
-
-```javascript
-import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@v0.1.1-esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@esm/index.mjs';
+var t = require( '@stdlib/random-strided-t' );
 ```
 
 #### t( N, v, sv, out, so )
@@ -61,7 +68,7 @@ import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@
 Fills a strided array with pseudorandom numbers drawn from a [Student's t][@stdlib/random/base/t]-distribution.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Create an array:
 var out = new Float64Array( 10 );
@@ -91,7 +98,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 <!-- eslint-disable stdlib/capitalized-comments -->
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Initial array:
 var v0 = new Float64Array( [ 2.0, 2.0, 2.0, 2.0, 2.0, 2.0 ] );
@@ -111,7 +118,7 @@ t( out.length, v1, -1, out, 1 );
 Fills a strided array with pseudorandom numbers drawn from a [Student's t][@stdlib/random/base/t]-distribution using alternative indexing semantics.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 // Create an array:
 var out = new Float64Array( 10 );
@@ -138,7 +145,7 @@ t.ndarray( 3, [ 2.0 ], 0, 0, out, 2, 1 );
 Returns a function for filling strided arrays with pseudorandom numbers drawn from a [Student's t][@stdlib/random/base/t]-distribution.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var random = t.factory();
 // returns <Function>
@@ -160,8 +167,8 @@ The function accepts the following `options`:
 To use a custom PRNG as the underlying source of uniformly distributed pseudorandom numbers, set the `prng` option.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import minstd from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
+var minstd = require( '@stdlib/random-base-minstd' );
 
 var opts = {
     'prng': minstd.normalized
@@ -175,7 +182,7 @@ random( out.length, [ 2.0 ], 0, out, 1 );
 To seed the underlying pseudorandom number generator, set the `seed` option.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+var Float64Array = require( '@stdlib/array-float64' );
 
 var opts = {
     'seed': 12345
@@ -209,7 +216,7 @@ var seed = t.seed;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = t.factory({
     'prng': minstd
@@ -232,7 +239,7 @@ var len = t.seedLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = t.factory({
     'prng': minstd
@@ -255,7 +262,7 @@ var state = t.state;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = t.factory({
     'prng': minstd
@@ -278,7 +285,7 @@ var len = t.stateLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = t.factory({
     'prng': minstd
@@ -301,7 +308,7 @@ var sz = t.byteLength;
 If the `factory` method is provided a PRNG for uniformly distributed numbers, the associated property value on the returned function is `null`.
 
 ```javascript
-var minstd = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-minstd-shuffle' ).normalized;
+var minstd = require( '@stdlib/random-base-minstd-shuffle' ).normalized;
 
 var random = t.factory({
     'prng': minstd
@@ -337,16 +344,11 @@ var sz = random.byteLength;
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@esm/index.mjs';
-import zeroTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zero-to@esm/index.mjs';
-import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
-import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@esm/index.mjs';
+```javascript
+var zeros = require( '@stdlib/array-zeros' );
+var zeroTo = require( '@stdlib/array-zero-to' );
+var logEach = require( '@stdlib/console-log-each' );
+var t = require( '@stdlib/random-strided-t' );
 
 // Specify a PRNG seed:
 var opts = {
@@ -377,10 +379,6 @@ var idx = zeroTo( x1.length, 'generic' );
 
 // Print the array contents:
 logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -390,6 +388,13 @@ logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
+
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/random-base/t`][@stdlib/random/base/t]</span><span class="delimiter">: </span><span class="description">Student's t-distributed pseudorandom numbers.</span>
+-   <span class="package-name">[`@stdlib/random-array/t`][@stdlib/random/array/t]</span><span class="delimiter">: </span><span class="description">create an array containing pseudorandom numbers drawn from a Student's t-distribution.</span>
 
 </section>
 
@@ -404,7 +409,7 @@ logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -434,8 +439,8 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/random-strided-t.svg
 [npm-url]: https://npmjs.org/package/@stdlib/random-strided-t
 
-[test-image]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/random-strided-t/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/random-strided-t/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/random-strided-t?branch=main
@@ -469,9 +474,15 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/random/base/t]: https://github.com/stdlib-js/random-base-t/tree/esm
+[@stdlib/random/base/t]: https://github.com/stdlib-js/random-base-t
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/esm
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
+
+<!-- <related-links> -->
+
+[@stdlib/random/array/t]: https://github.com/stdlib-js/random-array-t
+
+<!-- </related-links> -->
 
 </section>
 
