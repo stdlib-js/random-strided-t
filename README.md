@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@deno/mod.js';
+import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@v0.1.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@v0.1.2-deno/mod.js';
 ```
 
 #### t( N, v, sv, out, so )
@@ -336,7 +336,7 @@ var sz = random.byteLength;
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@deno/mod.js';
 import zeroTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zero-to@deno/mod.js';
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@deno/mod.js';
-import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@deno/mod.js';
+import t from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-t@v0.1.2-deno/mod.js';
 
 // Specify a PRNG seed:
 var opts = {
