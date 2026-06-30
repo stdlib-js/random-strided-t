@@ -393,6 +393,7 @@ logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
 
 ## See Also
 
+-   <span class="package-name">[`@stdlib/random-t`][@stdlib/random/t]</span><span class="delimiter">: </span><span class="description">generate pseudorandom numbers drawn from a Student's t-distribution.</span>
 -   <span class="package-name">[`@stdlib/random-base/t`][@stdlib/random/base/t]</span><span class="delimiter">: </span><span class="description">Student's t-distributed pseudorandom numbers.</span>
 -   <span class="package-name">[`@stdlib/random-array/t`][@stdlib/random/array/t]</span><span class="delimiter">: </span><span class="description">create an array containing pseudorandom numbers drawn from a Student's t-distribution.</span>
 
@@ -479,6 +480,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 <!-- <related-links> -->
+
+[@stdlib/random/t]: https://github.com/stdlib-js/random-t
 
 [@stdlib/random/array/t]: https://github.com/stdlib-js/random-array-t
 
